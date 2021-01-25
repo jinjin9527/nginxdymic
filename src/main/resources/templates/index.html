@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nginx-Demo</title>
+    <script src="http://192.168.1.10/jquery-3.1.1.min.js"></script>
+    <link href="http://192.168.1.10/main.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>apache動静コンテンツ分離デモ</h1>
+    <div>
+        <h1>１、apacheServerから取得-<span style="color:red">静的コンテンツ</span>    </h1>
+        <div><h1>・画像</h1><img id="staticImg" src="http://192.168.1.10/img1.png" /></div>
+        <div><h1 id="staticCss">・JS</h1></div>
+        <div><h1>・CSS：<span id="staticText">文字テスト</span></h1></div>
+    </div>
+    <div>
+        <h1>２、apacheServer経由-SpringBootから取得-<span style="color:red">動的コンテンツ</span></h1>
+        <div>
+            <h1>現在時刻：<span th:text="${myvalue}"/></h1>
+        </div>
+    </div>
+
+</body>
+<script>
+    $("#staticCss").html("・JQuery-Version：JQuery(" + $.fn.jquery + ")");
+</script>
+</html>

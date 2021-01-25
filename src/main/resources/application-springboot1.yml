@@ -1,0 +1,9 @@
+server:
+  port: 8081
+
+message:
+  value: springboot1
+
+spring:
+  thymeleaf:
+    mode: HTML
